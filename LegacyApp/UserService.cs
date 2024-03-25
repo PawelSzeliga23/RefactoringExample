@@ -6,21 +6,17 @@ namespace LegacyApp
     {
         public bool AddUser(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId)
         {
-            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+            if (UserDataValidationManager.ValidateNames(firstName,lastName))
             {
                 return false;
             }
 
-            if (!email.Contains("@") && !email.Contains("."))
+            if (UserDataValidationManager.ValidateEmail(email))
             {
                 return false;
             }
 
-            var now = DateTime.Now;
-            int age = now.Year - dateOfBirth.Year;
-            if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
-
-            if (age < 21)
+            if (UserDataValidationManager.ValidateAge(dateOfBirth))
             {
                 return false;
             }
@@ -60,7 +56,7 @@ namespace LegacyApp
                 }
             }
             
-            if (user.HasCreditLimit && user.CreditLimit < 500)
+            if (UserCreditValidationManager.CheckCredit(user))
             {
                 return false;
             }
