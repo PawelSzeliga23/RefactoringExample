@@ -79,14 +79,5 @@ namespace LegacyApp
                 return userCreditService.GetCreditLimit(user.LastName, user.DateOfBirth);
             }
         }
-
-        public int ImportantUserCreditLimitTest(UserCreditService userCreditService, User user)
-        {
-            return ImportantUserCreditLimit(userCreditService, user);
-        }
-        public int NormalUserCreditLimitTest(UserCreditService userCreditService, User user)
-        {
-            return NormalUserCreditLimit(userCreditService, user);
-        }
     }
 }

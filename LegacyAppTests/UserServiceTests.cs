@@ -9,49 +9,53 @@ public class UserServiceTests
     {
         //Arrange
         var service = new UserCreditValidationService();
-        
+
         //Act
-        var result = service.CheckCredit(new TestUser(450,true));
-        
+        var result = service.CheckCredit(new TestUser(450, true));
+
         //Assert
-        Assert.Equal(true,result);
+        Assert.Equal(true, result);
     }
+
     [Fact]
     public void ValidateData_Should_Return_True_When_Younger_Than_21()
     {
         //Arrange
         var service = new UserDataValidationService();
-        
+
         //Act
         var result = service.ValidateData("John", "Doe", "kowalski@wp.pl", new DateTime(2010, 1, 1));
-        
+
         //Assert
-        Assert.Equal(true,result);
+        Assert.Equal(true, result);
     }
+
     [Fact]
     public void ValidateData_Should_Return_True_When_Missing_At_Sign_And_Dot_In_Email()
     {
         //Arrange
         var service = new UserDataValidationService();
-        
+
         //Act
         var result = service.ValidateData("John", "Doe", "kowalskiwppl", new DateTime(1980, 1, 1));
-        
+
         //Assert
-        Assert.Equal(true,result);
+        Assert.Equal(true, result);
     }
+
     [Fact]
     public void ValidateData_Should_Return_True_When_Missing_FirstName()
     {
         //Arrange
         var service = new UserDataValidationService();
-        
+
         //Act
         var result = service.ValidateData(null, "Doe", "kowalski@wp.pl", new DateTime(2010, 1, 1));
-        
+
         //Assert
-        Assert.Equal(true,result);
+        Assert.Equal(true, result);
     }
+
     [Fact]
     public void AddUser_Should_Return_False_When_Missing_FirstName()
     {
@@ -64,7 +68,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(false, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_False_When_Missing_At_Sign_And_Dot_In_Email()
     {
@@ -77,7 +81,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(false, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_False_When_Younger_Then_21_Years_Old()
     {
@@ -90,7 +94,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(false, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_True_When_Very_Important_Client()
     {
@@ -103,7 +107,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(true, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_True_When_Important_Client()
     {
@@ -116,7 +120,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(true, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_True_When_Normal_Client()
     {
@@ -129,7 +133,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(true, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Return_False_When_Normal_Client_With_No_Credit_Limit()
     {
@@ -142,7 +146,7 @@ public class UserServiceTests
         //Assert
         Assert.Equal(false, result);
     }
-    
+
     [Fact]
     public void AddUser_Should_Throw_Exception_When_User_Does_Not_Exist()
     {
@@ -155,7 +159,7 @@ public class UserServiceTests
             _ = service.AddUser("John", "Unknown", "kowalski@wp.pl", new DateTime(1980, 1, 1), 100);
         });
     }
-    
+
     [Fact]
     public void AddUser_Should_Throw_Exception_When_User_No_Credit_Limit_Exists_For_User()
     {
