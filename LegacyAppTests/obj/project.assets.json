@@ -5534,19 +5534,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\s27030\\.nuget\\packages\\": {}
+    "C:\\Users\\pawes\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s27030\\Downloads\\zadanie_with_initial_tests\\zadanie_with_initial_tests\\zadanie_solution\\LegacyAppTests\\LegacyAppTests.csproj",
+      "projectUniqueName": "C:\\Users\\pawes\\RiderProjects\\RefactoringExample\\LegacyAppTests\\LegacyAppTests.csproj",
       "projectName": "LegacyAppTests",
-      "projectPath": "C:\\Users\\s27030\\Downloads\\zadanie_with_initial_tests\\zadanie_with_initial_tests\\zadanie_solution\\LegacyAppTests\\LegacyAppTests.csproj",
-      "packagesPath": "C:\\Users\\s27030\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s27030\\Downloads\\zadanie_with_initial_tests\\zadanie_with_initial_tests\\zadanie_solution\\LegacyAppTests\\obj\\",
+      "projectPath": "C:\\Users\\pawes\\RiderProjects\\RefactoringExample\\LegacyAppTests\\LegacyAppTests.csproj",
+      "packagesPath": "C:\\Users\\pawes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pawes\\RiderProjects\\RefactoringExample\\LegacyAppTests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\s27030\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pawes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5560,8 +5565,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\s27030\\Downloads\\zadanie_with_initial_tests\\zadanie_with_initial_tests\\zadanie_solution\\LegacyApp\\LegacyApp.csproj": {
-              "projectPath": "C:\\Users\\s27030\\Downloads\\zadanie_with_initial_tests\\zadanie_with_initial_tests\\zadanie_solution\\LegacyApp\\LegacyApp.csproj"
+            "C:\\Users\\pawes\\RiderProjects\\RefactoringExample\\LegacyApp\\LegacyApp.csproj": {
+              "projectPath": "C:\\Users\\pawes\\RiderProjects\\RefactoringExample\\LegacyApp\\LegacyApp.csproj"
             }
           }
         }
@@ -5570,11 +5575,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5618,7 +5618,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

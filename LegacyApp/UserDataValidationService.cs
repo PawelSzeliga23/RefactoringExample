@@ -2,9 +2,9 @@
 
 namespace LegacyApp;
 
-public class UserDataValidationManager
+public class UserDataValidationService
 {
-    public static bool ValidateAge(DateTime dateOfBirth)
+    private bool ValidateAge(DateTime dateOfBirth)
     {
         var now = DateTime.Now;
         int age = now.Year - dateOfBirth.Year;
@@ -12,14 +12,18 @@ public class UserDataValidationManager
         return age < 21;
     }
 
-    public static bool ValidateNames(string firstName, string lastName)
+    private bool ValidateNames(string firstName, string lastName)
     {
         return string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName);
     }
 
-    public static bool ValidateEmail(string email)
+    private bool ValidateEmail(string email)
     {
         return !email.Contains("@") && !email.Contains(".");
     }
-    
+
+    public bool ValidateData(string firstName, string lastName, string email, DateTime dateOfBirth)
+    {
+        return ValidateAge(dateOfBirth) || ValidateNames(firstName, lastName) || ValidateEmail(email);
+    }
 }
